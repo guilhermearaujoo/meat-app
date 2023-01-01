@@ -8,6 +8,7 @@ import { RestaurantsComponent } from "./restaurants/restaurants.component";
 export const ROUTES: Routes = [
   {path: '', component: HomeComponent},
   { path: "about", loadChildren: "./about/about.module#AboutModule" },
+  { path: "order", loadChildren: './order/order.module#OrderModule' },
   {path: 'restaurants', component: RestaurantsComponent},
   {path: 'restaurants/:id', component: RestaurantDetailComponent, children: [
     { path: "", redirectTo: "menu", pathMatch: "full" },

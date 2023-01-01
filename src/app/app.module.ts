@@ -17,6 +17,8 @@ import { ReviewComponent } from './restaurant-detail/review/review.component';
 import { MenuItemComponent } from './restaurant-detail/menu/menu-item/menu-item.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
+import { SharedModule } from './shared/shared.module';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,11 +31,13 @@ import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-
     ReviewComponent,
     MenuItemComponent,
     ShoppingCartComponent,
+    OrderSummaryComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    SharedModule.forRoot()
   ],
   providers: [RestaurantService, ShoppingCartService],
   bootstrap: [AppComponent]
