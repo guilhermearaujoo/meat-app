@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
-import { RastaurantComponent } from './restaurants/restaurant/rastaurant.component'
+import { RestaurantComponent } from './restaurants/restaurant/restaurant.component'
+import { RestaurantService } from './restaurants/restaurants.service';
 
 
 @NgModule({
@@ -18,14 +19,14 @@ import { RastaurantComponent } from './restaurants/restaurant/rastaurant.compone
     HeaderComponent,
     HomeComponent,
     RestaurantsComponent,
-    RastaurantComponent
+    RestaurantComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

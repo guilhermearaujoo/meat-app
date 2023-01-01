@@ -8,12 +8,12 @@ import { Restaurant } from "./restaurant/restaurant.model";
 import { ErrorHandler } from "app/app.error-handler";
 @Injectable()
 export class RestaurantService {
-  constructor(public http : Http) {
-  }
+  constructor(public http: Http) {}
 
-  restaurants() : Observable<Restaurant[]> {
-    return this.http.get(`${MEAT_API}/restaurants`)
-      .map(response => response.json())
-      .catch(ErrorHandler.handleError)
+  restaurants(): Observable<Restaurant[]> {
+    return this.http
+      .get(`${MEAT_API}/restaurants`)
+      .map((response) => response.json())
+      .catch(ErrorHandler.handleError);
   }
 }
