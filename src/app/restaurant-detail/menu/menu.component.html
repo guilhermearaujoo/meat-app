@@ -1,3 +1,12 @@
-<p>
-  menu works!
-</p>
+<!--INÍCIO DO MENU -->
+<div class="col-md-9 col-xs-12">
+  <mt-menu-item
+    *ngFor="let menuItem of menu"
+    [menuItem]="menuItem"
+  ></mt-menu-item>
+  <!-- (add)="shoppingCart.addItem($event)" -->
+</div>
+<!-- <div class="col-md-3 col-xs-12">
+  <mt-shopping-cart #shoppingCart ></mt-shopping-cart>
+</div> -->
+<!-- FIM DO MENU -->
