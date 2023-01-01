@@ -11,9 +11,7 @@ import { OrderService } from './order.service';
   templateUrl: './order.component.html'
 })
 export class OrderComponent implements OnInit {
-  router: any;
-
-  constructor(public orderService : OrderService, public route : Router, private formBuilder : FormBuilder) { }
+  constructor(public orderService : OrderService, public route : Router, public formBuilder : FormBuilder) { }
   deliveryValue : number = 8
 
   orderForm: FormGroup
@@ -87,7 +85,7 @@ export class OrderComponent implements OnInit {
       (item: CartItem) => new OrderItem(item.quantity, item.menuItem.id)
     );
     this.orderService.checkOrder(order).subscribe((orderId) => {
-      this.router.navigate(["/order-summary", orderId]);
+      this.route.navigate(["/order-summary", orderId]);
       console.log(`Compra com o id: ${orderId} realizada com sucesso!`);
     });
     this.orderService.clear();

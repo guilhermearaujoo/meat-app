@@ -9,8 +9,8 @@ import { RestaurantService } from "app/restaurants/restaurants.service";
 })
 export class RestaurantDetailComponent implements OnInit {
   constructor(
-    private restaurantService: RestaurantService,
-    private route: ActivatedRoute
+    public restaurantService: RestaurantService,
+    public route: ActivatedRoute
   ) {}
   restaurant: Restaurant;
 

@@ -9,7 +9,7 @@ import { ShoppingCartService } from './shopping-cart.service';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor(private shoppingCartService : ShoppingCartService) { }
+  constructor(public shoppingCartService : ShoppingCartService) { }
 
   ngOnInit() {
   }
