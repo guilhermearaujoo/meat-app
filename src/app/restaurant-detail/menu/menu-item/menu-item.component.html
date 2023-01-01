@@ -9,10 +9,9 @@
     <span class="menu-item-info-box-price">{{
       menuItem.price | currency : "BRL" : true
     }}</span>
-    <a href="#" class=""
+    <a class="" (click)="emitAddEvent()"
       ><i class="fa fa-plus-circle"></i> Adicionar</a
     >
   </div>
-  <!-- (click)="emitAddEvent()" -->
   <!-- /.info-box-content -->
 </div>

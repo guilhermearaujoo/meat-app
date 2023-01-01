@@ -16,5 +16,4 @@ export class MenuComponent implements OnInit {
     this.restaurantService.restaurantMenu(this.route.parent.snapshot.params['id'])
     .subscribe(menu => this.menu = menu)
   }
-
 }

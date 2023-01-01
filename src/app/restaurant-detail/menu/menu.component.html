@@ -3,10 +3,10 @@
   <mt-menu-item
     *ngFor="let menuItem of menu"
     [menuItem]="menuItem"
+    (add)="shoppingCart.addItem($event)"
   ></mt-menu-item>
-  <!-- (add)="shoppingCart.addItem($event)" -->
 </div>
-<!-- <div class="col-md-3 col-xs-12">
+<div class="col-md-3 col-xs-12">
   <mt-shopping-cart #shoppingCart ></mt-shopping-cart>
-</div> -->
+</div>
 <!-- FIM DO MENU -->
