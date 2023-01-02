@@ -20,6 +20,7 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { SharedModule } from './shared/shared.module';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     MenuItemComponent,
     ShoppingCartComponent,
     OrderSummaryComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

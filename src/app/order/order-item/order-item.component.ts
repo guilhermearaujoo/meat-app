@@ -6,7 +6,7 @@ import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
   templateUrl: './order-item.component.html'
 })
 export class OrderItemComponent implements OnInit {
-  @Input() items : CartItem
+  @Input() items : CartItem[]
   @Output() increaseQty = new EventEmitter<CartItem>()
   @Output() decreaseQty = new EventEmitter<CartItem>()
   @Output() remove = new EventEmitter<CartItem>()
