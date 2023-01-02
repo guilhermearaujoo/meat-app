@@ -81,6 +81,7 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order) {
+    console.log(order);
     order.orderItems = this.items().map(
       (item: CartItem) => new OrderItem(item.quantity, item.menuItem.id)
     );

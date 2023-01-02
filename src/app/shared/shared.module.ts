@@ -10,11 +10,11 @@ import { OrderService } from "app/order/order.service";
 import { RatingComponent } from './rating/rating.component';
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 import { NotificationService } from "./messages/notifications.service";
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+
 
 @NgModule({
   declarations: [InputComponent, RadioComponent, RatingComponent, RatingComponent, SnackbarComponent],
-  imports: [CommonModule, ReactiveFormsModule, BrowserAnimationsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [InputComponent, RadioComponent, CommonModule, ReactiveFormsModule, RatingComponent, SnackbarComponent],
 })
 export class SharedModule {
