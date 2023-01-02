@@ -8,10 +8,10 @@
   <!-- /.box-header -->
   <div class="box-body">
     <p *ngIf="!items().length" class="text-center">Sem items no carrinho</p>
-    <div class="table-responsive" *ngIf="items().length">
+    <div class="table-responsive overflowHidden" *ngIf="items().length">
       <table class="table">
         <tbody>
-          <tr *ngFor="let item of items()">
+          <tr *ngFor="let item of items()" [@row]="rowState">
             <th style="width: 60%">({{ item.quantity}}x){{ item.menuItem.name }}</th>
             <th class="text-right">
               <a class="fa fa-remove" (click)="removeItem(item)"></a>

@@ -261,3 +261,7 @@ body {
 .has-error-block {
   color: #dd4b39;
 }
+
+.overflowHidden {
+  overflow-x: hidden;
+}
