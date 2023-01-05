@@ -4,6 +4,7 @@ import * as fs from 'fs'
 import * as https from 'https'
 
 import { handleAuthentication } from './auth'
+import { handleAuthorization } from './authz'
 
 const server: Express = jsonServer.create()
 const router = jsonServer.router('db.json')
@@ -16,6 +17,7 @@ server.use(middlewares)
 server.use(jsonServer.bodyParser)
 
 server.post('/login', handleAuthentication)
+server.use('/orders', handleAuthorization)
 
 const options = {
   cert: fs.readFileSync('./backend/keys/cert.pem'),

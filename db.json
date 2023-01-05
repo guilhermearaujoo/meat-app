@@ -371,5 +371,25 @@
     }
   ],
   "orders": [
+    {
+      "name": "Guilherme",
+      "email": "gui@gg.com",
+      "emailConfirmation": "gui@gg.com",
+      "address": "asdhsakdj",
+      "number": "78",
+      "optional": "",
+      "paymentOption": "CAD",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "greensandwich"
+        },
+        {
+          "quantity": 1,
+          "menuId": "cup"
+        }
+      ],
+      "id": 1
+    }
   ]
 }

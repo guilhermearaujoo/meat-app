@@ -3,7 +3,7 @@ export class User {
     public email: string,
     public name: string,
     private password: string
-  ) {}
+  ) { }
 
   matches(another: User): boolean {
     return (
@@ -14,7 +14,7 @@ export class User {
   }
 }
 
-export const users = {
+export const users: { [key: string]: User } = {
   "ghma.em@gmail.com": new User(
     "ghma.em@gmail.com",
     "Guilherme",
