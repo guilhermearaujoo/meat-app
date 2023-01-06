@@ -20,7 +20,8 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
 import { SharedModule } from './shared/shared.module';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { LoginComponent } from './security/login/login.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     ShoppingCartComponent,
     OrderSummaryComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
