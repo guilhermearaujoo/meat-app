@@ -11,9 +11,10 @@ import { OrderService } from './order.service';
   templateUrl: './order.component.html'
 })
 export class OrderComponent implements OnInit {
-  constructor(public orderService : OrderService, public route : Router, public formBuilder : FormBuilder) { }
-  deliveryValue : number = 8
+  constructor(public orderService: OrderService, public route: Router, public formBuilder: FormBuilder) { }
 
+  orderId: string
+  deliveryValue: number = 8
   orderForm: FormGroup
   optional: string = "name";
   paymentOptions: RadioOption[] = [
@@ -22,7 +23,7 @@ export class OrderComponent implements OnInit {
     { label: "Cartão Refeição", value: "CAR" },
   ];
   emailPattern =
-  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   numberPattern = /^[0-9]*$/;
 
   ngOnInit() {
@@ -49,17 +50,17 @@ export class OrderComponent implements OnInit {
       ]),
       optional: this.formBuilder.control(""),
       paymentOption: this.formBuilder.control("", [Validators.required]),
-    }, {validator: OrderComponent.equalsTo});
+    }, { validator: OrderComponent.equalsTo });
   }
 
-  static equalsTo(group: AbstractControl) : {[key : string] : boolean }{
+  static equalsTo(group: AbstractControl): { [key: string]: boolean } {
     const email = group.get('email')
     const emailConfirmation = group.get('emailConfirmation')
     if (!email || !emailConfirmation) {
       return undefined
     }
     if (email.value !== emailConfirmation.value) {
-    return {emailsNotMatch: true}
+      return { emailsNotMatch: true }
     }
     return undefined
   }
@@ -76,23 +77,30 @@ export class OrderComponent implements OnInit {
     this.orderService.remove(item)
   }
 
-  items() : CartItem[] {
+  items(): CartItem[] {
     return this.orderService.items()
   }
 
   checkOrder(order: Order) {
-    console.log(order);
     order.orderItems = this.items().map(
       (item: CartItem) => new OrderItem(item.quantity, item.menuItem.id)
     );
-    this.orderService.checkOrder(order).subscribe((orderId) => {
-      this.route.navigate(["/order-summary", orderId]);
-      console.log(`Compra com o id: ${orderId} realizada com sucesso!`);
-    });
+    this.orderService.checkOrder(order)
+      .do((orderId: string) => {
+        this.orderId = orderId
+      })
+      .subscribe((orderId) => {
+        this.route.navigate(["/order-summary", orderId]);
+        console.log(`Compra com o id: ${orderId} realizada com sucesso!`);
+      });
     this.orderService.clear();
   }
 
   total(): number {
     return this.orderService.total();
+  }
+
+  isOrderCompleted() : boolean {
+    return this.orderId !== undefined
   }
 }
