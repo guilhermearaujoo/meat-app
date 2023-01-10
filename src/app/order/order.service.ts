@@ -5,7 +5,6 @@ import { CartItem } from "app/restaurant-detail/shopping-cart/cart-item.model";
 import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shopping-cart.service";
 import { Observable } from "rxjs";
 import { Order } from "./order.model";
-import { LoginService } from "app/security/login/login.service";
 
 @Injectable()
 export class OrderService {

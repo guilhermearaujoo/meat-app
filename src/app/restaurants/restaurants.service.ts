@@ -5,7 +5,6 @@ import { Observable } from "rxjs";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import { Restaurant } from "./restaurant/restaurant.model";
-import { ErrorHandler } from "app/app.error-handler";
 import { Review } from "app/restaurant-detail/review/review.model";
 import { MenuItem } from "app/restaurant-detail/menu/menu-item/menu-item.model";
 @Injectable()
